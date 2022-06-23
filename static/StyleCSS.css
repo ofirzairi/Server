@@ -1,0 +1,397 @@
+:root {
+    --darkerBlue: rgb(28, 91, 133);
+    --lightBlueText: rgb(202, 229, 238);    
+}
+
+/*-------------------------HOME PAGE-------------------------*/
+
+.body_home {
+    background: url("../static/new.jpg") no-repeat ;
+    background-size: 100% 400px;
+    background-position-y: 10%;
+}
+
+#homePage{
+   display: grid;
+    grid-template-areas: 
+    'nav'
+    'header'
+    'header2'
+    'button1'
+    'main'
+    'image'                 
+}
+
+.mainHome {
+    color: var(--darkerBlue);
+    font: bold;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar {
+    overflow: hidden;
+    position: fixed; 
+    top: 0; 
+    width: 100%; 
+    grid-area: nav;
+    background-color: white;
+  }
+  
+  
+  .navbar a {
+    float: left;
+    display: flex;
+    color:var(--darkerBlue);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    padding: 8px 10px;
+    text-decoration: none;
+  }
+  
+  
+  .navbar a:hover {
+    background: var(--lightBlueText);
+    color: black;
+  }
+
+#header_home {
+    color:var(--lightBlueText); 
+    font-size: 120px;
+   grid-area: header ;
+    margin-top: 5%;
+    text-align: center;
+ }
+
+
+
+
+ #h2_Home {
+    font-size: xx-large;
+   grid-area: header2;
+    margin-top: 2%; 
+    
+} 
+ 
+ #description {
+
+    color: var(--darkerBlue);
+    font-size:larger;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 6%;
+    grid-area: main; 
+
+}
+
+ .button{
+    color: rgb(6, 143, 189); 
+    text-align: center;
+    margin-top: 1%;
+    grid-area: button1;
+    font-size: large;
+ }
+
+
+ h1
+  {
+     text-transform: uppercase;
+    background-image: linear-gradient(
+      -225deg,
+        
+        rgb(249, 254, 254) 0%,
+        rgb(56, 141, 186) 29%,
+        rgb(84, 146, 239) 67%,
+        #b3f3f3 100%
+
+    );
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    text-emphasis-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 3s linear 3;
+    display: inline-block;
+        font-size: 190px;
+  }
+  
+  @keyframes textclip {
+    to {
+      background-position: 200% center;
+    }
+  }
+
+.changeImage{
+    grid-area: image;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10%;
+}
+
+  #changedImage{
+     height: 30ch;
+     width: 30ch;
+      
+ 
+      
+  }
+
+
+/*-------------------------CONTACT PAGE-------------------------*/
+ 
+ .body_contact {
+    background: url("../static/new.jpg") no-repeat ;
+    background-size: 100%;
+    background-position: cover;
+   /* display:block;*/
+}
+
+
+ .mainContact {
+    color:rgb(6, 143, 189);
+    font-family: 'Segoe UI',Tahoma, Geneva, Verdana, sans-serif ; 
+    text-align: center;
+    font-size: larger;
+    
+}
+
+#header_contact {
+    color:var(--lightBlueText); 
+    font-size: 100px;
+   grid-area: header ;
+    margin-top: 5%;
+    text-align: center;
+ }
+
+
+#fill_in_contact{
+    
+    padding-bottom: 3%;
+    margin-top: -1%;   
+ }
+
+#fill{
+    float: left;
+    margin-left:20%;
+    margin-top: -3%;
+
+}
+
+#lastName{
+    margin-right: 0.6%;
+}
+
+#age{
+    margin-right: 5.3%;
+}
+
+#e-mail{
+    margin-right:13.8%;
+}
+
+
+#rightText{
+    float:right; 
+    margin-right: 15%; 
+    margin-top: -4%; 
+
+}
+
+#div{
+  margin-top:5%;
+}
+
+#send{
+    margin-top: 13%;
+    margin-bottom: 10%;
+}
+ 
+
+.square{
+      background-color:rgb(227, 237, 240);
+      background-position: center;
+      border-radius: 5px;
+      background-size: 40%;
+      height: 100%;
+      width: 100%;
+      float: center;
+      margin-top: 5%;
+     
+     
+  }
+
+  #writerH3{
+    margin-top: -10%;
+    color: var(--lightBlueText);
+    font: bold;
+    font-size: xx-large;
+   
+
+}
+
+/*-------------------------------------CURRENT PAGE-----------------------------------*/
+
+.active {
+    border: 2px solid rgb(146, 212, 227);
+    border-radius: 5px;
+}
+
+/*----------------------------------MEDIA QUERY---------------------------------------*/
+
+
+@media only screen and (max-width: 1000px) {
+    .body_home {
+        background: url("../static/new.jpg") no-repeat ;
+        background-size: 100% 400px;
+        background-position-y: 10%;
+    }
+
+    #header_home{
+        padding-top: 8%;
+    }
+
+    p{
+        margin-top: 3%;
+    }
+
+    .button{
+        margin-bottom: 5%;
+    }
+
+    .body_contact{
+        background: url("../static/new.jpg") no-repeat ;
+        background-size: 100% 400px;
+     
+    }
+
+    #header_contact{
+        padding-top: 5%;
+        color:rgb(52, 167, 202) ;
+        
+    }
+
+    #rightText{
+        float:left;
+        margin-left:20%;
+        margin-top: 3%;
+    }
+
+    #send{
+    float:left;
+    margin-left:40%;
+    margin-top: 3%;
+    margin-bottom: 8%;
+    } 
+
+    .square{
+        margin-top: 10%;
+        background-size: 50%;
+        height: 600px ;
+        background-position: 100%;
+        background: cover;
+    }
+
+    #writerH3{
+        color: rgb(52, 167, 202);
+    }
+
+}
+
+/*----------------------------------ASSIGNMENT3_1---------------------------------------*/
+
+
+.body_assignment3_1{
+    background-color:rgb(227, 237, 240);
+    color: var(--darkerBlue);
+    font: bold;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#header3_1{
+    font-size:120px;
+}
+
+h4{
+    margin-top: -5%;
+    font-size: xx-large;
+}
+
+#left_div{
+    margin-right: 50%;
+}
+
+h5{
+     margin-top: -2%;
+     font-size: large;
+ }
+
+#right_img{
+    float: right;
+    height: 50ch;
+     width: 50ch;
+    margin-top: -18%;
+    margin-right: 10%;
+
+}
+
+ /*----------------------------------ASSIGNMENT3_2---------------------------------------*/
+
+#body_3_2{
+  background-color:rgb(227, 237, 240);
+    color: var(--darkerBlue);
+    font: bold;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#search{
+    margin-left: 33%;
+    margin-top: 8%;
+    border:solid 1px;
+    max-width:420px;
+    border-radius: 10%;
+    border-left-width: medium;
+    border-right-width: medium;
+}
+
+h6{
+    margin-left: -23%;
+    font-size: large;
+}
+
+#register{
+    margin-top: 70%;
+    border:solid 1px;
+    display:inline-block;
+    margin: 0 auto;
+    border-radius: 10%;
+    border-left-width: medium;
+    border-right-width: medium;
+}
+
+
+#form_header {
+    background-color: rgb(227, 237, 240);
+     font-size:50px;
+    text-align: center;
+    margin-top: 5%;
+}
+
+
+#message_logedin{
+    font-size:40px;
+     margin-top: 5%;
+}
+
+
+#sum_3_2{
+     color: var(--darkerBlue);
+    font: bold;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: xx-large;
+}

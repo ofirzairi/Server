@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block title %}Yogi-sign in{% endblock %}
+
+{% block content %}
+    <body class="body_assignment3_2" id="body_3_2">
+        <div id="search">
+             <h1 id="form_header" > Search Form:</h1><br>
+             <span> Search a yoga teacher by typing in your wanted yoga type:</span><br><br>
+             <form action="/assignment3_2" method="get">
+                <input type="text" name="yoga_type" placeholder="Yoga Type"><br><br>
+                <input type="submit" value="Find" class="submit"><br><br>
+             </form>
+
+            {% if yoga_type %}
+                <h2><u>Our {{ yoga_type }} Teachers:</u></h2>
+                <ul>
+                 {{ teacher_1 }}<br>
+                 {{ teacher_2 }}<br>
+                 {{ teacher_3 }}<br>
+                </ul>
+            {% endif %}
+
+
+            {% if message4 %}
+                 <h3>{{ message4 }}</h3>
+            {% endif %}
+
+            {% if teachers_dict %}
+                <ol>
+                    {% for type in teachers_dict %}
+                        <ul><h6>{{type}}:{{ teachers_dict[type][0]}},{{teachers_dict[type][1]}},{{teachers_dict[type][2]}}</h6></ul>
+                    {% endfor %}
+                </ol>
+            {% endif %}
+        </div>
+        <br>
+        <br>
+
+        <div id="register">
+            {% if session['logedin'] %}
+                {% if message1 %}
+                    <h1 id="message_logedin"> {{ message1 }}, {{ session['userName'] | upper() }}</h1><br>
+
+                {% elif message3 %}
+                    <h1 id="message_logedin">{{ message3 }}, {{ session['userName'] | upper() }}</h1>
+                 {% else %}  <h1 id="message_logedin">You're in!</h1>
+                {% endif %}
+                <form action="{{url_for('logout_func')}}"><input type="submit" value="Log out" /></form><br><br>
+
+
+
+            {% else %}
+                 <h1 id="form_header" > Registration Form:</h1>
+                 {% if message2 %}
+                    <h2 id="message_tryAgain">{{ message2 }}</h2>
+                 {% endif %}
+                 <form action="/assignment3_2" method="post">
+                    <input type=email name="userName" placeholder="abc@def.com" pattern=".+@gmail.com" ><br><br>
+                    <input type="text" name="password" placeholder="password" ><br><br>
+                    <input type="text" name="Name" placeholder="Name" > <br><br>
+                    <input type="submit"><br><br>
+                </form>
+
+
+            {% endif %}
+        </div>
+    </body>
+{% endblock %}
+
+{% block summary %}
+{% endblock %}

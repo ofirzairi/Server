@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yogi-Yoga Studio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='StyleCSS.css')}}">
+    <script defer src="{{url_for('static', filename='JS.js')}}"></script>
+</head>
+
+<body class="body_home">
+    <div id="homePage">
+
+    {% include ('nav.html') %}
+
+
+        <h1 class="mainHome" id="header_home" > Yogi</h1>
+        {% if session['logedin'] %}
+              <h2 id="h2_Home" class="mainHome">
+              {{ session['userName'] | upper }}, Come Take The First Step In Your journey
+              </h2>
+        {% else %}
+           <h2 id="h2_Home" class="mainHome">
+            Come Take The First Step In Your journey
+            </h2>
+        {% endif %}
+
+
+
+
+        <p id="description" class="mainHome">
+            When you say yoga in Tel Aviv you say Yogi. Yogi is a spacious, bright, airy, and relaxed studio that provides an intimate
+            and profesional environment. It allows you to preceed in your personal journey towards fitness and physical and mental strength.
+             <br> <br>
+
+            We strive to allow anyone who wishes to practice yoga to find the class that best suits them if it’s the beginner student
+            looking to get familiarised with yoga for the first time or the more advanced student looking to deepen their practice. All 
+            of this in a warm and comfortable homey atmosphere.<br> <br>
+
+            Click here to see our Teachers:
+        </p>
+
+        
+        <div class="changeImage">
+            <img id="changedImage" src="../static/teacher1.jpg" onclick="ReplaceImage()" alt="Error"/>
+        </div>
+        
+        <nav class="button">
+        <button class="button" onclick="window.location.href={{url_for('contact')}}" >Contact Us</button>
+        </nav>
+    </div>
+</body>
+</html>

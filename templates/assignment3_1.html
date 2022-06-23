@@ -1,0 +1,42 @@
+
+    {% extends 'base.html' %}
+    {% block title %}Assignment 3{% endblock %}
+
+
+{% block content %}
+<body class="body_assignment3_1">
+    <div id="assignment3_1">
+
+      <h1 id="header3_1">WELCOME</h1>
+        {% if session['logedin'] %}
+            <h4> Hi {{ session['userName'] | upper }}, we are happy to see you here</h4>
+        {% else %}
+            <h4> Hi Stranger, we are happy to see you here</h4>
+        {% endif %}
+        <div id="left_div">
+        <h5> Here are {{ yoga_types|length }} of the Yoga types we teach in our studio :</h5>
+        <p>
+             {% for type in yoga_types %}
+                <ul>
+                {{ type}}
+                </ul>
+            {% endfor %}
+        </p>
+        </div>
+        <img id="right_img" src="../static/teaching.jpg">
+
+
+
+    </div>
+</body>
+{% endblock %}
+
+{% block summary %}
+   {{ super() }}
+    <h3>
+    and HIT THE ROAD!
+    </h3>
+{% endblock %}
+
+
+

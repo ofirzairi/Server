@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    {% include('style.html') %}
+    {% include('JS.html') %}
+</head>
+
+<body>
+    {% include('nav.html') %}
+    {% block content %}
+    {% endblock %}
+    {% block summary %}
+        <h3> all you have left is to choose one
+            </h3>
+    {% endblock %}
+
+
+</body>
+</html>
+

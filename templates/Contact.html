@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yogi contactUs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='StyleCSS.css')}}">
+    <script defer src="{{url_for('static', filename='JS.js')}}"></script>
+</head>
+
+
+<body class="body_contact">
+    <div id="contactPage">
+    
+      {% include ('nav.html') %}
+  
+        <h4 class="mainHome" id="header_contact" > Yogi - Yoga Studio </h4>
+
+        <div class="writerH3">
+            <div id="writerH3" class="mainContact"></div>
+        </div>
+
+        <div class="square"> 
+
+        <h3 id="fill_in_contact" class="mainContact">
+        <br> Fill in your details and we will get back to you as soon as possible
+        </h3>
+ 
+
+        <form action="URL" method="post">
+            <div class="mainContact" id="fill">
+                <label  for="First_Name">First Name:</label>
+                <input type="text" id="First_Name" name="First_Name" required><br>
+            
+                <label id="lastName" for="Last_Name" >Last Name:</label>
+                <input type="text" id="Last_Name" name="Last_Name" required><br>
+        
+                <label id="age" for="Age" >Your Age:</label>
+                <input type="number" id="Age" name="Age" min="14"><br>
+
+                <label id="e-mail" for="Email">E-mail:</label>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label  id="chekbox1" for="isFirst" >First time here?</label>
+                <input type="checkbox" id="isFirst" name="isFirst" ><br>
+
+            </div>   
+
+
+            <div class="mainContact" id="rightText" >
+                <label for="freeText" >What's on your mind?</label><br>
+                <textarea name="freeText" id="freeText" cols="50" rows="8"></textarea><br>
+            </div>
+
+       
+     
+            <div  class="mainContact" id="div" >
+            <input class="button" id="send" type="submit" ><br>
+            </div>
+
+        </div>
+        </form>
+    </div>
+
+
+
+</body>
+</html>
