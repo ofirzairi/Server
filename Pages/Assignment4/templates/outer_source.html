@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% include 'JS4.html' %}
+
+{% block title %}Outer Source{% endblock %}
+
+{% block content %}
+    <body class="body_outer" id="body_3_2">
+
+
+        <div id="FORMS">
+                <h1 id="form_header" >Frontend: </h1><br>
+                <form id="frontend" onsubmit="return false">
+                        <input type=int id="user_id" name="user_id" placeholder="user ID" required><br><br>
+                        <button onclick="userID()">submit</button><br><br>
+                 </form>
+        </div>
+
+
+        <div id="FORMS">
+                <h1 id="form_header" >Backend: </h1><br>
+                <form id="backend" action="/assignment_4/outer_source/fetch_backend" method="get">
+                     <input type=int id="user_id" name="user_id" placeholder="user ID" required><br><br>
+                     <input type="submit" value="submit"><br><br>
+                </form>
+        </div>
+
+
+        <div id="Response_FE"></div>
+
+        <div id="Response_BE">
+         {% if request_data %}
+            <h3> {{ request_data.first_name }} {{ request_data.last_name }} </h3>
+            <h3> {{ request_data.email }} </h3>
+            <img src="{{ request_data.avatar }}" alt="Profile Picture"/>
+        {% endif %}
+        </div>
+
+    </body>
+
+{% endblock %}
+
+{% block summary %}
+{% endblock %}

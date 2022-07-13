@@ -43,5 +43,25 @@ function setActive() { /* marking current page function*/
     }
   }
 
+  // $("frontend").submit();
+
+  function userID() {
+    const formInput = document.getElementById("frontend").user_id.value;
+    console.log(formInput)
+    fetch(`https://reqres.in/api/users/${formInput}`)
+        .then((response) => response.json())
+        .then((object) => {
+            const data = object?.data;
+            document.getElementById("Response_BE").innerHTML = `<div></div>`;
+            document.getElementById("Response_FE").innerHTML =
+                `
+                    <br>
+                    <h3>${data?.first_name} ${data?.lastname}</h3>
+                    <h3>${data?.email}</h3>
+                    <img src="${data?.avatar}" alt="Profile Picture"/>
+                `
+        })
+        .catch((err) => console.log(err));
+}
 
 
